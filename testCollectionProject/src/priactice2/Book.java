@@ -10,6 +10,8 @@ public class Book implements Serializable{
 	private int category; //도서분류코드(1.인문/2.자연과학/3.의료/4.기타)
 	private String title; //책제목
 	private String author; //저자
+	
+	public Book() {}
 	public Book(String bNO, int category, String title, String author) {
 		super();
 		this.bNO = bNO;
@@ -42,6 +44,7 @@ public class Book implements Serializable{
 		this.author = author;
 	}
 	
+	@Override
 	public String toString() {
 		return this.bNO + "  " + this.category + "  " + this.title + "  " + this.author + "  ";
 	}
