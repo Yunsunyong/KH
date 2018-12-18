@@ -10,6 +10,20 @@ public class TestPersonArrayList2 {
 		
 		alist = addMethod();
 		printList(alist);
+		System.out.println("---------------------");
+		alist.sort(new NameAscending());
+		printList(alist);
+		System.out.println("---------------------");
+		alist.sort(new NameDescending());
+		printList(alist);
+		
+		System.out.println("---------------------");
+		alist.sort(new PointAscending());
+		printList(alist);
+		
+		System.out.println("---------------------");
+		alist.sort(new PointDescending());
+		printList(alist);
 	}
 	public static ArrayList<Person> addMethod() {
 		ArrayList<Person> alist = new ArrayList<Person>();
@@ -27,5 +41,7 @@ public class TestPersonArrayList2 {
 			totalPoint += p.getPoint();
 		}
 		System.out.println("포인트 총합 : " + totalPoint);
+		
+		
 	}
 }

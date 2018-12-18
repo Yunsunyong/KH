@@ -9,7 +9,7 @@ public class Book implements Serializable{
 	private String bNO; //도서번호
 	private int category; //도서분류코드(1.인문/2.자연과학/3.의료/4.기타)
 	private String title; //책제목
-	private String author; //저자
+	private String author; //저
 	
 	public Book() {}
 	public Book(String bNO, int category, String title, String author) {

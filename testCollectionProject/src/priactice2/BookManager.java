@@ -5,8 +5,9 @@ import java.util.*;
 public class BookManager {
 	private ArrayList bookList;
 	
-	public BookManager() {}
-
+	public BookManager() {
+		this.bookList = new ArrayList();
+	}
 	public BookManager(ArrayList bookList) {
 		super();
 		this.bookList = bookList;
@@ -17,36 +18,40 @@ public class BookManager {
 	public ArrayList getBookList() {
 		return this.bookList;
 	}
-	public void addBook(Book book) {
-			
-		bookList.add(book.getbNO());
-		bookList.add(book.getCategory());
-		bookList.add(book.getTitle());
-		bookList.add(book.getAuthor());
-		
+	public void addBook(Book book) {			
+			bookList.add(book);					
 	}
-	public void deleteBook(int index) {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("제거할 항목 : ");
-		index = sc.nextInt();
-		
-		bookList.remove(index);
-		
+	public void deleteBook(int index) {			
+		bookList.remove(index);		
 	}
 	public int searchBook(String bTitle) {
-		
-		return 0;
+		int index = -1;
+		for(int i = 0; i < bookList.size(); i++) {
+			if(((Book)bookList.get(i)).getTitle().equals(bTitle) == true) {
+				index = i;
+				break;
+			}
+		}
+		return index;
 	}
-	public void printBook() {
-		
+	public void printBook(int index) {
+		System.out.println(bookList.get(index));
 	}
 	public void displayAll() {
-		
+		for(int i = 0; i < bookList.size(); i++) {
+			System.out.println(bookList.get(i));
+		}
 	}
 	public Book[] sortedBookList() {
-		return null;
+		bookList.sort(new AscCategory());
+		Book[] br = new Book[bookList.size()];	
+		bookList.toArray(br);
+		
+		return br;
 	}
 	public void printBookList(Book[] br) {
-		
+		for(Book b : br) {
+			System.out.print(b);
+		}
 	}
 }

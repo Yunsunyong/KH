@@ -1,5 +1,6 @@
 package priactice2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestBookManager {
@@ -10,7 +11,7 @@ public class TestBookManager {
 		
 		int num;
 		do {
-			System.out.println("*** 도서 관리 프로그램 ***");
+			System.out.println("\n*** 도서 관리 프로그램 ***");
 			System.out.println();
 			System.out.println("1. 새 도서 추가");
 			System.out.println("2. 도서정보 정렬후 출력");
@@ -23,45 +24,41 @@ public class TestBookManager {
 			
 			switch(num) {
 			case 1 : bm.addBook(inputBook()); break;
-			case 2 : bm.sortedBookList(); break;
-			case 3 : bm.deleteBook(1); break;
-			case 4 : bm.searchBook(inputBookTitle()); break;
+			case 2 : bm.printBookList(bm.sortedBookList()); break;
+			case 3 : bm.deleteBook(bm.searchBook(inputBookTitle())); break;
+			case 4 : bm.printBook(bm.searchBook(inputBookTitle())); break;
 			case 5 : bm.displayAll(); break;
-			case 6 : System.out.println("끝냄"); break;
+			case 6 : System.out.println("도서 관리 프로그램 종료합니다."); break;
 			default : System.out.println("번호를 잘못 입력하셨습니다.");
 						System.out.println("다시 입력하십시오.");		
 			}
 		}while(num != 6);
-		
-		
 	}
 	
 	public static Book inputBook() {
 		Scanner sc = new Scanner(System.in);
-		Book book = new Book();
-		do {
-			System.out.print("도서번호 :");
-			book.setbNO(sc.next());
-			System.out.print("도서분류코드 :");
-			book.setCategory(sc.nextInt());
-			System.out.print("책 제목 :");
-			book.setTitle(sc.next());
-			System.out.print("저자명 :");
-			book.setAuthor(sc.next());
-			System.out.print("계속 추가하시겠습니까?(y/n) :");
-		}while(sc.next().toLowerCase().charAt(0) == 'y');
+		Book b = new Book();	
+				
+		System.out.print("도서번호 :");
+		b.setbNO(sc.nextLine());	
+		System.out.print("도서분류코드(1.인문/2.자연과학/3.의료/4.기타) :");
+		b.setCategory(sc.nextInt());					
+		System.out.print("책 제목 :");
+		b.setTitle(sc.next());
+		System.out.print("저자명 :");
+		b.setAuthor(sc.next());
 		
-		return book;
+		return b;
 	}
 	public static String inputBookTitle() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("삭제 또는 검색할 도서명 : ");
+		System.out.print("검색할 도서명 : ");
 		
 		return sc.next();
 	}
 	
 	public static void main(String[] args) {
-		// 
+		// 컬렉션실습문제2
 		menu();
 	}
 

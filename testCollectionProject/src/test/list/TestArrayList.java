@@ -29,17 +29,14 @@ public class TestArrayList {
 		
 		//add(순번, 객체) //원하는 위치에 객체 저장
 		alist.add(1, "html5");
-		alist.add(3,"program");
 		System.out.println(alist);
 		
 		//set(index, 변경할객체) //원하는 위치에 객체 변경
 		alist.set(3, "css3");
-		alist.set(2, "king");
 		System.out.println(alist);
 		
 		//remove(삭제할 객체) : Set 계열 메소드와 동일함
 		alist.remove("java");
-		alist.remove("king");
 		System.out.println(alist);
 		
 		//remove(index) //index위치에 객체 삭제

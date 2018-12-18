@@ -36,7 +36,6 @@ public class Person implements Serializable{
 		this.point = point;
 	}
 	
-	@Override
 	public String toString() {
 		return this.name + ", " + this.age + ", " + this.point;
 	}
