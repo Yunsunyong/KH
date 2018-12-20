@@ -1,12 +1,13 @@
-package priactice2;
+package practice3;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TestBookManager {
+import practice2.Book;
+import practice2.BookManager;
 
+public class TestBookManagerMap {
 	public static void menu() {
-		BookManager bm = new BookManager();
+		BookManagerMap bmp = new BookManagerMap();
 		Scanner sc = new Scanner(System.in);
 		
 		int num;
@@ -23,11 +24,11 @@ public class TestBookManager {
 			num = sc.nextInt();
 			
 			switch(num) {
-			case 1 : bm.addBook(inputBook()); break;
-			case 2 : bm.printBookList(bm.sortedBookList()); break;
-			case 3 : bm.deleteBook(bm.searchBook(inputBookTitle())); break;
-			case 4 : bm.printBook(bm.searchBook(inputBookTitle())); break;
-			case 5 : bm.displayAll(); break;
+			case 1 : bmp.putBook(inputBook()); break;
+			case 2 : bmp.printBookMap(bmp.sortedBookMap()); break; 
+			case 3 : bmp.removeBook(bmp.searchBook(inputBookTitle())); break; 
+			case 4 : bmp.printBook(bmp.searchBook(inputBookTitle()));; break;
+			case 5 : bmp.displayAll(); break;
 			case 6 : System.out.println("도서 관리 프로그램 종료합니다."); break;
 			default : System.out.println("번호를 잘못 입력하셨습니다.");
 						System.out.println("다시 입력하십시오.");		
@@ -56,9 +57,8 @@ public class TestBookManager {
 		
 		return sc.next();
 	}
-	
 	public static void main(String[] args) {
-		// 컬렉션실습문제2
+		// TODO Auto-generated method stub
 		menu();
 	}
 

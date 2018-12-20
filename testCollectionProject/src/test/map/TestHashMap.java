@@ -3,7 +3,7 @@ package test.map;
 
 import java.util.*;
 
-import priactice2.Book;
+import practice2.Book;
 import test.list.Person;
 
 public class TestHashMap {
