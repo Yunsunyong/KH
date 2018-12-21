@@ -5,7 +5,7 @@ import java.util.*;
 public class Lotto {
 
 	public static void lottoDisplay() {
-		/*TreeSet tset = new TreeSet();
+		TreeSet tset = new TreeSet();
 		boolean lottoNuber;
 		for(int i = 0; i < 6; i++) {
 			tset.add((int)(Math.random() * 45)+1);
@@ -19,9 +19,9 @@ public class Lotto {
 			//Auto UnBoxing
 			System.out.print(iar[i] + "  ");
 		}
-		System.out.println();*/	
+		System.out.println();	
 	
-	Random r = new Random();
+	/*Random r = new Random();
 	TreeSet tset = new TreeSet();
 	
 	while(true) {
@@ -38,7 +38,7 @@ public class Lotto {
 		System.out.print(iar[i] + " ");
 	}
 	
-	
+*/	
 	}	
 	public static void main(String[] args) {
 		// 컬렉션실습문제 문제1
